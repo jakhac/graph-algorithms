@@ -1,0 +1,156 @@
+/*
+Welcome page styling for graph algorithm visualizer tool.
+Author: Kevin Katzkowski
+Updated: 29.02.2020
+*/
+
+#welcome-window-container {
+  display: block;
+  position: fixed;
+  z-index: 11;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  transition: 0.2s;
+}
+
+#welcome-window {
+  margin: 2% 10%;
+  padding: 1rem;
+  background-color: var(--color-surface);
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  text-align-last: center;
+  box-shadow: var(--shadow-context);
+}
+
+
+.brand {
+  text-align-last: left;
+  float: left;
+  padding-top: 0;
+  font-size: 1.25rem;
+}
+#welcome-window p {
+  width: 80%;
+  font-size: 1.5rem;
+  margin: 4rem auto 1rem auto;
+  text-align: center;
+  text-align-last: center;
+}
+
+#heading-container {
+  width: 80%;
+  margin: 6rem auto 0rem auto;
+  text-align: center;
+}
+
+
+#welcome-window .button-bar {
+  margin: 5rem auto 0rem auto;
+  width: 25%;
+  padding: 0.5rem 1rem;
+}
+
+#welcome-window button {
+  font-size: 1.1rem;
+  width: 100%;
+  margin: 0.25rem 0rem;
+  padding: 0.75rem 1.25rem;
+}
+
+#welcome-window button.secondary {
+  background-color: var(--color-surface);
+  padding: 0rem;
+  transition: 0.2s;
+}
+
+#welcome-window button.secondary:hover {
+  text-decoration: underline;
+}
+
+#welcome-window img {
+  position: relative;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1360px) {
+  #heading-container {
+    width: 80%;
+  }
+
+  #welcome-window .button-bar {
+    width: 30%;
+  }
+
+  #welcome-window p {
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  #welcome-window {
+    margin: 0;
+    overflow-y: scroll;
+  }
+  #welcome-window .button-bar {
+    width: 100%;
+    margin: 1rem 0rem;
+    padding: 1rem 0rem;
+  }
+  #welcome-window p {
+    width: 100%;
+    font-size: 1.25rem;
+    margin: 1rem auto 1rem auto;
+    padding: 0rem;
+  }
+  #welcome-window img {
+    width: 200%;
+    left: -5%;
+  }
+
+  #welcome-window h1 {
+    font-size: 2rem;
+    margin: 0rem;
+  }
+
+  #heading-container {
+    margin: 3rem auto 0 auto;
+  }
+
+  .close {
+    display: none;
+  }
+
+  #skip-tutorial {
+    display: none;
+  }
+}
+
+#tour-left, #tour-top, #tour-right, #tour-bottom {
+  display: none;
+  background-color: rgba(0,0,0,0.4);
+  position: fixed;
+  z-index: 4;
+}
+
+#tooltip-anchor { 
+  display: none;
+  box-shadow: inset 0 0 1px 10px rgba(0,0,0,0);
+  position: fixed;
+  z-index: 4;
+}
+
+#tour-highlight {
+  z-index: -4;
+  position: fixed;
+  top: 30px;
+  left: 290px;
+  width: 500px;
+  height: 400px;
+}
+

@@ -1,0 +1,1 @@
+Nodes A 2 2 #007ACC B 11 4 #007ACC C 3 8 #007ACC D 6 6 #007ACC E 8 11 #007ACC StartNode undefined EndNode undefined Edges A B 7 undefined A C 4 undefined C D 1 undefined C E 3 undefined D B 3 undefined 

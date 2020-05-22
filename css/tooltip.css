@@ -1,0 +1,134 @@
+/*
+General styling for tooltips
+Author: Kevin Katzkowski
+Updated: 23.02.2020
+*/
+
+.tooltip {
+  z-index: 5; /* TODO shall be smaller than side containers */
+  position: fixed;
+  height: auto;
+  width: 28rem;
+  padding: 0.25rem;
+  margin-top: 0.5rem;
+  display: none;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-context);
+  background-color: var(--color-tooltip);
+  transition: 0.2s;
+}
+
+.small {
+  position: absolute;
+  width: 20rem;
+}
+
+.tooltip button {
+  padding: 0.15rem;
+  width: 25%;
+  vertical-align: middle;
+  font-size: 1rem;
+  margin: 0.25rem 0rem;
+}
+
+.tooltip .button-bar button:not(:first-child) {
+  margin-left: 2.5%;
+  height: auto;
+}
+
+.tooltip .button-bar {
+  width: 93.5%; /* for Edge */
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
+  margin: 0rem 1rem; /* TODO 0rem 0.5rem 0rem 1rem; */
+  padding: 0rem;
+  text-align: right;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 15%;
+  margin-left: -8px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent var(--color-tooltip) transparent;
+}
+
+.tooltip.help.pos-bottom::after {
+  display: none;
+}
+
+.tooltip.pos-bottom::after {
+  top: 100%;
+  border-color: var(--color-tooltip) transparent transparent transparent;
+}
+
+.tooltip.pos-left::after {
+  left: -8px;
+  top: 2.5%;
+  transform: rotate(270deg);
+}
+
+.tooltip.pos-middle::after {
+  left: 50%;
+}
+
+.tooltip p, .tooltip h3 {
+  color: var(--color-onbackground);
+  margin-top: 0.25rem;
+  text-align: left;
+}
+
+.tooltip p {
+  margin: 0.25rem 0rem 0.75rem 0rem;
+}
+
+.small p {
+  width: 90%;
+}
+
+#file-name {
+  margin-right: 0rem;
+  background-color: var(--color-tooltip);
+  color: var(--color);
+}
+
+.tooltip input[type="text"] {
+  border-color: var(--color-onsurface-inverted);
+}
+
+.help-gif {
+  border-radius: var(--border-radius);
+  width: 93.5%; /* for Edge */
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
+  margin: 0 1rem;
+  padding: 0rem;
+}
+
+.tooltip .help-container {
+  width: 100%;
+}
+
+.tooltip.flat {
+  width: 40rem;
+}
+
+.tooltip.flat .help-container {
+  width: 50%;
+  float: right;
+}
+
+.tooltip.flat .help-gif {
+  width: 95%;
+}
+
+.tooltip.flat .text-container {
+  width: 50%;
+  float: left;
+}

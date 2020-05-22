@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="./css/colors.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/sidebar.css" />
+    <link rel="stylesheet" href="./css/buttons.css" />
+    <link rel="stylesheet" href="./css/context.css" />
+    <link rel="stylesheet" href="./css/containers.css" />
+    <link rel="stylesheet" href="./css/tooltip.css" />
+    <link rel="stylesheet" href="./css/mobile.css" />
+    <link rel="stylesheet" href="./css/help.css" />
+    <link rel="stylesheet" href="./css/welcome.css" />
+
+    <link
+      rel="icon"
+      type="image/svg"
+      href="images/favicon_blue_white.svg"
+      sizes="any"
+    />
+
+    <title>graph algorithms</title>
+  </head>
+
+  <body>
+    <!-- on mobile, do not display website -->
+    <div id="mobile-page">
+      <h2 id="brand">graph algorithm visualizer</h2>
+
+      <h1>looks like you are visiting from a touch device.</h1>
+
+      <p>
+        we're sorry! the graph algorithm visualizer is currently not supporting
+        touch interaction :(
+      </p>
+
+      <p>
+        copy the link and save it, so you can revisit from a desktop pc later.
+      </p>
+
+      <p id="helper-desktop">
+        if you are seeing this page on a desktop device, simply increase the
+        window size and/or reset your browser's zoom.
+      </p>
+
+      <!-- TODO correct link | hidden input to copy link from  -->
+      <input id="copy-link" type="text" value="https://www.google.com" />
+
+      <!-- buttons -->
+      <div id="centered-buttons" class="button-bar">
+        <button id="copy" class="primary">copy link</button>
+      </div>
+    </div>
+
+    <!-- welcome window -->
+    <div id="welcome-window-container">
+      <div id="welcome-window">
+        <h2 class="brand">graph algorithm visualizer</h2>
+        <span id="close-landing" class="close">&times</span>
+
+        <div id="heading-container">
+          <h1 class="alternative">learn visually how graph algorithms work</h1>
+
+          <p>
+            this tool allows you to draw your own graph and then select an
+            algorithm to execute on your graph. the pathing of the algorithm
+            will be highlighted during execution.
+          </p>
+
+          <div class="button-bar">
+            <button id="start-tutorial" class="primary">get started</button>
+            <button id="skip-tutorial" class="secondary">skip tutorial</button>
+          </div>
+        </div>
+
+        <!-- background image -->
+        <img id="landing-img" src="./images/graph-dark.png" />
+      </div>
+    </div>
+
+    <!-- help window -->
+    <div id="help-window-container">
+      <div id="help-window">
+        <div id="help-window-fixed-bar">
+          <h2 class="brand">graph algorithm visualizer</h2>
+
+          <span id="close-help" class="close">&times</span>
+        </div>
+
+        <div id="help-window-content">
+          <div id="help-heading-container">
+            <h1 class="alternative">need help?</h1>
+            <p>
+              if this is your first time using this tool, we recommend you to
+              take the tutorial.
+            </p>
+            <button class="primary" id="take-tutorial-from-help">
+              take tutorial
+            </button>
+            <!-- <button class="primary" id="take-tutorial-test">take tutorial</button> -->
+          </div>
+
+          <div id="help-container">
+            <!-- help topics -->
+            <div id="help-titles-container">
+              <ul id="help-titles">
+                <li>how to...</li>
+                <li data-help-topic="select-algo" class="help-button selected">
+                  select an algorithm
+                </li>
+                <li data-help-topic="draw-node" class="help-button">
+                  draw a node
+                </li>
+                <li data-help-topic="move-node" class="help-button">
+                  move a node
+                </li>
+                <li data-help-topic="start-node" class="help-button">
+                  set a start node
+                </li>
+                <li data-help-topic="target-node" class="help-button">
+                  set a target node
+                </li>
+                <li data-help-topic="value-node" class="help-button">
+                  change a node's value
+                </li>
+                <li data-help-topic="color-node" class="help-button">
+                  change a node's color
+                </li>
+                <li data-help-topic="delete-node" class="help-button">
+                  delete a node
+                </li>
+                <li data-help-topic="draw-edge" class="help-button">
+                  draw an edge
+                </li>
+                <li data-help-topic="value-edge" class="help-button">
+                  change an edge's value
+                </li>
+                <li data-help-topic="delete-edge" class="help-button">
+                  delete an edge
+                </li>
+              </ul>
+            </div>
+
+            <!-- help section -->
+            <div id="help-topic-container">
+              <h2 id="help-topic-heading">how to select an algorithm</h2>
+              <p id="help-topic-description">
+                in the node's context menu, select 'delete' to remove the node.
+                all conncected edges will als be deleted!
+              </p>
+              <ol></ol>
+              <img id="help-topic-gif" class="help-gif" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- left sidebar-->
+    <div id="sidebar">
+      <!-- application fixed controls -->
+      <div id="fixed-controls">
+        <!-- page heading -->
+        <div id="heading">
+          <h1 id="heading-h1">graph algorithms</h1>
+        </div>
+
+        <!-- list of algorithms to choose from -->
+        <div id="choose-algorithm">
+          <ul>
+            <li id="alg-1" data-alg-key="dij">dijkstra</li>
+            <li id="alg-2" data-alg-key="gre">greedy (naive)</li>
+            <li id="alg-3" data-alg-key="sma">greedy (smart)</li>
+            <li id="alg-4" data-alg-key="ast">a* star</li>
+            <li id="alg-5" data-alg-key="dfs">depth first search</li>
+            <li id="alg-6" data-alg-key="bfs">breadth first search</li>
+          </ul>
+        </div>
+
+        <!-- main control buttons-->
+        <button id="start" class="run-controls primary">run algorithm</button>
+        <button id="result" class="run-controls secondary">result</button>
+      </div>
+
+      <!-- application scrollable controls -->
+      <div id="scroll-controls">
+        <span id="further-controls">
+          <h2 id="controls-heading">further controls</h2>
+
+          <!-- execution speed slider-->
+          <p id="speed-slider-state">execution speed: medium</p>
+          <div id="speed-slider-container">
+            <input
+              id="speed-slider"
+              class="slider"
+              type="range"
+              min="1"
+              max="7"
+              value="4"
+            />
+          </div>
+
+          <!-- random graph size slider-->
+          <p id="size-slider-state">random graph size: medium</p>
+          <div id="size-slider-container">
+            <input
+              id="size-slider"
+              class="slider"
+              type="range"
+              min="1"
+              max="3"
+              value="2"
+            />
+          </div>
+
+          <!-- clear canvas and random graph buttons -->
+          <div class="button-bar" id="clear-random-graph-buttons">
+            <button id="clear" class="run-controls secondary">clear</button>
+            <button id="random" class="run-controls secondary">random</button>
+          </div>
+        </span>
+
+        <!-- distanced edges and auto scrolling checkboxes -->
+        <div id="checkboxes">
+          <label id="checkbox-distanced-edges" class="checkbox-container">
+            <input type="checkbox" />distanced edges mode
+            <span class="checkmark"></span>
+          </label>
+
+          <label id="checkbox-auto-scroll" class="checkbox-container">
+            <input type="checkbox" checked="checked" />auto window scrolling
+            <span class="checkmark"></span>
+          </label>
+        </div>
+
+        <!-- export and import section-->
+        <span id="export-import-graph">
+          <h2 id="export-heading">load/store graph</h2>
+          <p id="export-p">save your graphs to reuse them later</p>
+
+          <!-- export/import buttons -->
+          <div class="button-bar" id="load-store-graph-buttons">
+            <!-- handle upload file  -->
+            <input
+              id="fileElem"
+              type="file"
+              accept=".grph"
+              style="display: none;"
+            />
+            <button id="import" class="run-controls secondary">import</button>
+            <button id="export" class="run-controls secondary">export</button>
+          </div>
+        </span>
+      </div>
+
+      <!-- help and theme switch button -->
+      <div id="help-button-bar" class="button-bar">
+        <button id="day-night" class="secondary"></button>
+        <button id="help" class="secondary">help</button>
+      </div>
+    </div>
+
+    <!-- main and background canvas -->
+    <canvas id="canvas" width="2600" height="1400"></canvas>
+    <canvas id="canvas-graph" width="2600" height="1400"></canvas>
+    <canvas id="canvas-bg" width="2600" height="1400"></canvas>
+
+    <!-- custom context menu -->
+    <div id="context-menu-node" class="context-menu">
+      <ul>
+        <li id="context-delete-node" class="context-option">delete node</li>
+        <li id="context-value" class="context-option">change value</li>
+        <li id="context-color" class="context-option">change color</li>
+        <li id="context-start-node" class="context-option">set start</li>
+        <li id="context-target-node" class="context-option">set target</li>
+      </ul>
+    </div>
+
+    <!-- custom context menu for edges -->
+    <div id="context-menu-edge" class="context-menu">
+      <ul>
+        <li id="context-delete-edge" class="context-option">delete edge</li>
+        <li id="context-value-edge" class="context-option">change value</li>
+      </ul>
+    </div>
+
+    <!-- context menu node color selection -->
+    <div id="context-menu-node-color" class="context-menu">
+      <p>choose node color</p>
+      <div>
+        <button data-color="blue" class="colors"></button>
+        <button data-color="yellow" class="colors"></button>
+        <button data-color="orange" class="colors"></button>
+        <button data-color="green" class="colors"></button>
+      </div>
+    </div>
+
+    <!-- context menu node value change -->
+    <div id="context-menu-node-value" class="context-menu">
+      <p>new node value</p>
+      <input id="new-node-value" type="text" size="3" maxlength="3" />
+      <input id="submit-node-value" type="submit" value="save" />
+    </div>
+
+    <!-- context menu edge value change -->
+    <div id="context-menu-edge-value" class="context-menu">
+      <p>new edge value</p>
+      <input id="new-edge-value" type="number" min="0" max="999" />
+      <input id="submit-edge-value" type="submit" value="save" />
+    </div>
+
+    <!-- minimap with indicator -->
+    <div id="minimap">
+      <canvas id="mini-canvas"></canvas>
+      <div id="indicator"></div>
+    </div>
+
+    <!-- collapse / expand button result container -->
+    <div id="result-collapse-container">
+      <i id="result-arrow" class="right"></i>
+    </div>
+
+    <!-- result and execution container  -->
+    <div id="result-window">
+      <h2 id="running-state" class="inactive"></h2>
+      <ul>
+        <li>steps: <span id="running-steps">0</span></li>
+        <li>path cost: <span id="running-costs">-</span></li>
+      </ul>
+    </div>
+
+    <!-- collapse / expand button info container -->
+    <div id="info-collapse-container">
+      <i id="info-arrow" class="right"></i>
+    </div>
+
+    <!-- algorithm info -->
+    <div id="info-window">
+      <div id="info-heading-container">
+        <h2 id="algo-name">about this tool</h2>
+      </div>
+      <div id="scroll-container">
+        <p id="algo-p1">
+          using this tool, you can interactively visualize graph algorithms.
+        </p>
+        <p id="algo-p2">
+          draw a graph onto the canvas or generate a random one. then choose an
+          algorithm from the list above and click 'start' to see how it
+          executes.
+        </p>
+        <p id="algo-p3">for help, click on the help button.</p>
+      </div>
+    </div>
+
+    <!-- tutorial highlight boxes -->
+    <div id="tour-left"></div>
+    <div id="tour-top"></div>
+    <div id="tour-right"></div>
+    <div id="tour-bottom"></div>
+    <div id="tooltip-anchor"></div>
+    <div id="tour-highlight"></div>
+
+    <!-- abort tutorial button -->
+    <button id="abort-tutorial" class="primary alert">abort tutorial</button>
+
+    <!-- Custom javascript -->
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

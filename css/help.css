@@ -1,0 +1,192 @@
+/*
+Help page styling (old) ?????????
+Author: Kevin Katzkowski
+Updated: 17.03.2020
+*/
+
+#help-window-container {
+  display: none;
+  position: fixed;
+  z-index: 8;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0);
+}
+
+#help-window {
+  position: absolute;
+  width: 660px;
+  padding: 1rem;
+  background-color: var(--color-help);
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
+  overflow: hidden;
+  overflow-y: scroll;
+
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-context);
+  transition: 0.2s;
+  left: -800px;
+}
+
+#help-window-content {
+  position: relative;
+  margin-top: 2rem;
+  text-align: left;
+  /* height: 100%; */
+}
+
+#help-heading-container {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+#help-window h1 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-inverted);
+}
+
+#help-window-fixed-bar {
+  background-color:  var(--color-help);
+  width: 660px;
+  position: fixed;
+  z-index: 1;
+  padding-bottom: 0.5rem;
+  box-shadow: 0px 2px 8px var(--color-help);
+}
+
+#help-heading-container p {
+  margin-top: 2rem;
+  margin-bottom: 0rem;
+  font-size: 1.25rem;
+  color: var(--color-text-inverted);
+}
+
+#help-container {
+  display: flex;
+  margin: 0.5rem;
+  position: relative;
+  background-color: var(--color-help-surface);
+  border-radius: var(--border-radius);
+  width: 650px;
+  height: 550px;
+
+}
+
+#help-titles-container {
+  width: 300px;
+  height: inherit;
+  background-color: var(--color-help-background);
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+
+#help-titles {
+  list-style-type: none;
+  font-size: 1.25rem;
+}
+
+#help-titles li:first-child {
+  border-top-left-radius: var(--border-radius);
+  font-size: 1.85rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  padding: 0.75rem 1.25rem;
+}
+#help-titles li {
+  padding: 0.75rem 1.25rem;
+}
+
+#help-titles li.selected {
+  padding: 0.75rem 1.25rem;
+  color: var(--color-text-inverted);
+  background-color: var(--color-help-surface-highlight);
+}
+
+#help-titles li:not(:first-child):hover {
+  background-color: var(--color-help-surface-highlight);
+  cursor: default;
+}
+
+#help-topic-container {
+  max-width: 400px;
+  min-width: 300px;
+  width: 100%; /* for Edge */
+  width: -moz-available;
+  width: -webkit-fill-available;
+}
+
+#help-topic-heading {
+  font-size: 1.5rem;
+  padding: 0.75rem 1rem;
+  color: var(--color-text-inverted)
+}
+
+p#help-topic-description {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-inverted);
+}
+
+.help-item {
+  min-width: 200px;
+  max-width: 320px;
+
+  margin: 1rem;
+  flex-grow: 1;
+
+}
+
+.help-item p {
+  margin: 1rem 0rem;
+}
+
+.help-item img {
+  max-width: 100%;
+  /* display: block; */
+  border-radius: var(--border-radius);
+  /* width: -webkit-fill-available; */
+  padding: 0rem;
+
+  min-width: 50%;
+}
+
+#help-main-text {
+  min-width: 200px;
+  margin: 1rem;
+  max-width: 15%;
+  /* max-width: 100%; */
+  /* flex-grow: 13; */
+}
+
+.help-item, #help-main-text {
+  max-width: 23%;
+}
+
+
+/* @media screen and (max-width: 1860px) {
+  .help-item, #welcome {
+    max-width: 23%;
+  } */
+
+
+@media screen and (max-width: 1440px) {
+  .help-item, #welcome {
+    max-width: 30%;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .help-item, #welcome {
+    max-width: 45%;
+  }
+}
+
+.key-press {
+  border: 1px solid var(--color-text-inverted);
+  border-radius: var(--border-radius);
+  padding: 0px 5px;
+  background-color: var(--color-help-onsurface);
+}

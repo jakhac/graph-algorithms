@@ -1,0 +1,58 @@
+/*
+Context menu styling for graph algorithm visualizer tool
+Author: Kevin Katzkowski
+Updated: 22.02.2020
+*/
+
+.context-menu {
+  width: 120px;
+  box-shadow: var(--shadow-context);
+  background-color: var(--color-surface);
+  font-size: 1rem;
+
+  visibility: hidden;
+  position: absolute;
+  border-radius: var(--border-radius);
+  z-index: 5;
+}
+
+.context-menu li:first-child:hover {
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  cursor: default;
+}
+
+.context-menu li:last-child:hover {
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  cursor: default;
+}
+
+.context-option {
+  list-style: none;
+  padding: 10px 10px;
+  color: var(--color-text);
+}
+
+.context-option:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-highlight);
+  cursor: default;
+}
+
+#context-menu-node-color {
+  width: 160px;
+  visibility: hidden;
+}
+
+#context-menu-node-value,
+#context-menu-edge-value  {
+  width: 140px ;
+}
+
+#context-menu-node-color div,
+#context-menu-node-value div,
+#context-menu-edge-value div {
+  padding: 0rem 1rem 0.5rem 1rem;
+  width: auto;
+}

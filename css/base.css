@@ -1,0 +1,138 @@
+/*
+General styling for graph algorithm visualizer tool
+Author: Kevin Katzkowski
+Updated: 26.02.2020
+*/
+:root {
+  --border-radius: 5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Code Pro', Consolas, monospace;
+}
+
+html, body {
+  height: 100%;
+  overflow: visible;
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+  font-size: 80%;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+h1 {
+  margin: 0 1rem;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+h1.alternative {
+  font-size: 3rem;
+  color: var(--color-text);
+}
+
+h2 {
+  padding: 0.5rem 1rem 0rem 1rem;
+  font-size: 1.35rem;
+  color: var(--color-primary);
+}
+
+h2#controls-heading,
+h2#export-heading {
+  margin-top: 0.5rem;
+}
+
+h3 {
+  padding: 0.0rem 1rem;
+  font-size: 1.35rem;
+  color: var(--color-text);
+}
+
+h4 { 
+  font-size: 1.05rem;
+}
+
+p {
+  padding: 0.25rem 1rem 0.25rem 1rem;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+/* --- Chrome Scrollbar --- */
+::-webkit-scrollbar {
+  display: none;
+}
+
+#canvas {
+  z-index: 0;
+  position: absolute;
+  left: 260px;
+  background: none;
+  overflow: scroll;
+  transition: 0.2s;
+}
+
+#canvas-graph {
+  z-index: -1;
+  position: absolute;
+  left: 260px;
+  background: none;
+  overflow: scroll;
+  transition: 0.2s;
+}
+
+#canvas-bg {
+  z-index: -2;
+  position: absolute;
+  left: 260px;
+  background-color: var(--color-background);/*var(--color-surface);*/
+  overflow: scroll;
+}
+
+#canvas-container {
+  overflow: scroll;
+}
+
+#minimap {
+  z-index: 3;
+  position: fixed;
+
+  overflow: hidden;
+
+  border: 0px solid var(--color-grid);
+  border-radius: var(--border-radius);
+  
+  right: 15px;
+  bottom: 15px;
+
+  background-color: var(--color-minimap);
+  box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.4);
+}
+
+#indicator {
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius);
+  z-index: 4;
+  position: fixed;
+  background: none;
+}
+
+input[type="text"], input[type="number"] {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid var(--color-onsurface-inverted);
+  padding: 0.25rem;
+  margin: 0rem 0.5rem 0.5rem 1rem;
+}
+
+input[type="number"] {
+  width: 3rem;
+}

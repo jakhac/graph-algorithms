@@ -1,0 +1,208 @@
+/*
+Button styling for graph algorithm visualizer tool
+Author: Kevin Katzkowski
+Updated: 27.02.2020
+*/
+button {
+  border-radius: var(--border-radius);
+  transition: 0.2s background-color;
+}
+
+button:focus,
+button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+.button-bar {
+  width: 90%; /* relative to parent */
+  height: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+}
+
+#start,
+#result,
+#help {
+  width: 90%;
+  position: relative;
+  margin: 0rem 1rem;
+  margin-bottom: 0.25rem;
+}
+
+#help {
+  width: 65%;
+  margin: 0.5rem 0rem;
+}
+
+#start {
+  margin-top: 17.5rem;
+}
+
+#day-night {
+  width: 25%;
+  background-color: var(--color-background-day-night);
+  color: var(--color-surface);
+  transition: 0.2s;
+}
+
+#day-night:hover {
+  background-color: var(--color-background-day-night-highlight);
+  color: var(--color-background);
+}
+
+button.run-controls {
+  padding: 0.25rem;
+  width: 47.5%;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+
+button.colors {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--color-surface);
+}
+
+button.colors:hover,
+button.colors:focus,
+button.colors:active {
+  border: 1px solid var(--color-text);
+}
+
+#submit-node-value,
+#submit-edge-value {
+  padding: 0.25rem;
+  margin: 0rem 0.75rem 0.5rem 1rem;
+  width: 4rem;
+  float: right;
+  text-align: center;
+}
+
+
+#submit-node-value,
+#submit-edge-value,
+.inverted:hover,
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+  border: none;
+  border-radius: var(--border-radius);
+}
+
+#submit-node-value:hover,
+#submit-node-value:active,
+#submit-edge-value:hover,
+#submit-edge-value:active,
+.inverted,
+.primary:hover {
+  background-color: var(--color-onbackground);
+  border:none; 
+  color: var(--color-primary-text);
+}
+
+.alert {
+  background-color: var(--color-failure);
+}
+
+.secondary:focus,
+.secondary {
+  background-color: var(--color-onsurface);
+  border: none;
+  color: var(--color-sidebar-text);
+}
+
+.secondary:hover,
+.secondary-inverted:hover {
+  background-color: var(--color-surface-highlight);
+  color: var(--color-text-highlight);
+}
+
+.secondary-inverted {
+  background-color: var(--color-onsurface-inverted);
+  border: none;
+  color: var(--color-text-inverted);
+}
+
+i { 
+  border: solid var(--color-primary);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+
+  transition: transform 0.25s;
+}
+
+#arrow {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+}
+
+#arrow.right {
+  left: 0.5rem;
+}
+
+#arrow.left {
+  left: 1rem;
+}
+
+#info-arrow,
+#result-arrow {
+  position: relative;
+  top: 37.5%;
+}
+
+#result-arrow.right,
+#info-arrow.right {
+  left: 10%;
+}
+
+#result-arrow.left,
+#info-arrow.left {
+  left: 40%;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.close {
+  float: right;
+  line-height: 1rem;
+  font-size: 1.5rem;
+  color: var(--color-text);
+  transition: 0.2s;
+}
+.close:hover {
+  color: var(--color-primary);
+  cursor: default;
+} 
+
+#take-tutorial-from-help {
+  font-size: 1rem;
+  margin: 0.25rem 0rem;
+  padding: 0.5rem 0.75rem;
+  position: absolute;
+  top: 0rem;
+  right: 0.25rem;
+}
+
+#abort-tutorial {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  top: 0.1rem;
+  right: 0.1rem;
+  padding: 0rem 1rem;
+}

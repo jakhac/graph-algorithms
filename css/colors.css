@@ -1,0 +1,95 @@
+/*
+Day color scheme for graph algorithm visualizer tool
+Author: Kevin Katzkowski
+Updated: 27.02.2020
+*/
+
+/* Styling for both light and dark theme */
+:root {
+  --color-primary: #007ACC;
+  --color-primary-hover: #000a12;
+  --color-primary-text: #fff;
+
+ 
+
+  /* inverted colors for tooltips */
+  --color-onsurface-inverted: #bec0c6;
+  --color-surface-highlight-inverted: #d4d6dc;
+  --color-text-inverted:#000a12;
+  --color-text-highlight-inverted:#000;
+
+  /* success and failure colors */
+  --color-success: rgba(1, 199, 1, 1);
+  --color-failure: #BA1616;
+
+  /* These are necessary, because the css swap is not noticed by js */
+  --color-stroke-dark-theme: #b0bec5;
+  --color-stroke-light-theme: rgb(45, 45, 45);
+  
+  /* node colors */
+  --color-node-blue: var(--color-primary);
+  --color-node-yellow: #D1920C; 
+  --color-node-orange: #CC4B24;
+  --color-node-green: #209915; 
+  --color-node-darkblue: #1D3461;
+  --color-node-index: #fff;
+
+  /* help page */
+  --color-help: #F5F6FA;
+  --color-help-surface: #e1e4eb;
+  --color-help-onsurface: #bec0c6; /* d4d6dc 94969b */
+  --color-help-surface-highlight: #d4d6dc;
+  --color-help-background: #EBEEF5;
+}
+
+/* Dark theme styling */
+[data-theme="dark"] {
+  --color-background:  #1f292e;
+  --color-onbackground: #000a12;
+
+  --color-tooltip: #EBEEF5;
+  --color-minimap: #263238;
+  --color-sidebar: #263238; 
+  --color-sidebar-text: #b0bec5;
+
+  --color-surface: #263238;
+  --color-onsurface: #34444c; 
+  --color-surface-highlight: #4D5D5E;
+
+  --color-text: #b0bec5;
+  --color-text-highlight: #fff;
+
+  /* theme switch button */
+  --color-background-day-night: #e1e4eb;
+  --color-background-day-night-highlight: #fff;
+  
+  --color-grid: #000f1b;
+  
+  --shadow-context: 0 4px 10px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Light theme styling */
+[data-theme="light"] {
+  --color-background:  #EBEEF5; /*#f0f3f5;*/
+  --color-onbackground: #000a12;
+
+  --color-tooltip: #F5F6FA;
+  --color-minimap: #e1e4eb; /* e1e4eb e8ebf2 */
+  --color-sidebar: #e1e4eb; /* e1e4eb */
+  --color-sidebar-text: #212121;
+
+  --color-surface: #e1e4eb;
+  --color-onsurface: #bec0c6; /* d4d6dc 94969b */
+  --color-surface-highlight: #d4d6dc;
+
+  --color-text: #000a12;
+  --color-text-highlight: #000;
+
+  /* theme switch button */
+  --color-background-day-night: #263238; 
+  --color-background-day-night-highlight: #000;
+  
+  --color-grid: #d1dbe0;
+  
+  --shadow-context: 0 4px 5px 3px rgba(0, 0, 0, 0.2);
+}
