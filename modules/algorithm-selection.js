@@ -102,44 +102,44 @@ function loadAlgoInfo(key) {
   switch (key) {
     case 'dij': // dijkstra
       algoName.textContent = 'dijkstra\'s algorithm';
-      algoP1.textContent = 'dijkstra\'s algorithm stores current costs (initially set to infinity) and antecessor for every node in a priority queue.';
-      algoP2.textContent = 'the attributes of each node will be updated by lower costs and antecessors in order to provide an optimal path. If the queue is empty the path to finish can be tracked with the antecessors. ';
-      algoP3.textContent = 'dijkstra\'s algorithm always produces an optimal solution.';
+      algoP1.textContent = 'dijkstra\'s algorithm stores current cost (initially set to infinity) and antecessor for every node in a priority queue. in this process, the attributes of each node will be replaced by new cost and antecessor if there is a lower cost to reach this node in order to provide an optimal path.if the queue is empty all nodes have been processed and the path to target can be tracked with the node\'s antecessors.';
+      algoP2.textContent = 'dijkstra\'s algorithm always produces an optimal solution.';
+      algoP3.textContent = '';
       break;
 
     case 'gre': // greedy
       algoName.textContent = 'greedy (naive)';
-      algoP1.textContent = 'the greedy (naive) algorithm makes the optimal choice at each step to solve the problem. at each node the lowest connecting edge is taken until finish is reached.';
-      algoP2.textContent = 'it does not produce an optimal solution, since decisions are made based on information of single steps.'
-      algoP3.textContent = '';
+      algoP1.textContent = 'greedy (naive) algorithms select the optimal choice at each step to solve the problem. therefore, at each node the lowest connecting edge is taken.';
+      algoP2.textContent = 'if there is an edge from the current node to the target, this edge is taken without checking for the lowest connecting edge. this algorithm has no chance to revert a step if a deadlock or a cycle occurs in the current path.';
+      algoP3.textContent = 'greedy algorithms make fast decisions which might lead to higher costs and possible errors. it does not produce an optimal solution, since decisions are made based on information of single steps.'
       break;
 
     case 'sma': // smart_greedy
       algoName.textContent = 'greedy (smart)';
-      algoP1.textContent = 'the greedy (smart) algorithm makes the optimal choice at each step, so that the problem can still be solved. at each node the lowest connecting edge will be taken, if the edge does not produce a cycle.';
-      algoP2.textContent = 'It does not produce an optimal solution, since decisions are made based on information of single steps.'
-      algoP3.textContent = 'greedy (smart) algorithm makes the optimal choice at each step, so that the problem can still be solved. at each node the lowest connecting edge will be taken, if the edge does not produce a cycle.greedy (smart) algorithm makes the optimal choice at each step, so that the problem can still be solved. at each node the lowest connecting edge will be taken, if the edge does not produce a cycle.';
+      algoP1.textContent = 'greedy (naive) algorithms select the optimal choice at each step to solve the problem. therefore, at each node the lowest connecting edge is taken.if there is an edge from the current node to the target, this edge is taken without checking for the lowest connecting edge.';
+      algoP2.textContent = 'unlike greedy (naive), this algorithm does not produce a direct cycle as edges to processed nodes will not be taken. nevertheless, there is no chance to revert a step if a deadlock occurs in the current path.'
+      algoP3.textContent = 'greedy algorithms make fast decisions which might lead to higher costs and possible errors. it does not produce an optimal solution, since decisions are made based on information of single steps.'
       break;
 
     case 'dfs': // depthFirstSearch
       algoName.textContent = 'depth first search';
-      algoP1.textContent = 'the depth first search algorithm explores the node branch as far as possible before backtracking to expand other nodes skipped in the current branch.';
-      algoP2.textContent = 'this algorithm finds all possible paths to finish and therefore produces the optimal solution.'
+      algoP1.textContent = 'depth first search algorithm explores the node branch as far as possible before backtracking to expand other nodes skipped in the current branch. a stack is usually used to perform depth first search, since the latest pushed node is explored next. this algorithm finds every possible path to target. after depth first search terminated, the path with lowest cost to target is returned.';
+      algoP2.textContent = 'it returns an optimal solution, since every path from start to target is evaluated.'
       algoP3.textContent = '';
       break;
 
     case 'bfs': // breadthFirstSearch
       algoName.textContent = 'breadth first search';
-      algoP1.textContent = 'the breadth first search algorithm explores all connecting nodes at current depth before moving on the nodes at the next level depth.';
-      algoP2.textContent = 'this algorithm finds all possible paths to finish and therefore produces the optimal solution.'
+      algoP1.textContent = 'breadth first search algorithm explores all connecting nodes at current depth before moving on to the nodes at the next level depth. a queue is usually used as a data structure, since the last pushed node is epxlored next. this algorithm finds every possible path to the target. after breadth first search terminated, the path with lowest cost to target is returned.';
+      algoP2.textContent = 'it returns an optimal solution, since every path from start to target is evaluated.'
       algoP3.textContent = '';
       break;
 
     case 'ast': // a* star
       algoName.textContent = 'a* star algorithm';
-      algoP1.textContent = 'the a* star algorithm stores current costs (initially set to infinity), antecessor and the linear distance to finish for every node in a priority queue.';
-      algoP2.textContent = 'a* star always produces the optimal path if the distance calculation is correct.';
-      algoP3.textContent = '';
+      algoP1.textContent = 'a* star algorithm stores current cost (initially set to infinity), antecessor and the linear distance to target for every node in a priority queue. the algorithm works similar to dijkstra\'s since the attributes of each node will be replaced by new cost and antecessor if there is a lower cost to reach the node.';
+      algoP2.textContent = 'the algorithm skips nodes far from target, since their estimated cost based on known cost and linear distance eliminates them from being part of the shortest path.';
+      algoP3.textContent = 'a* star always produces the optimal path if the cost between all nodes relates to their real distance.';
       break;
 
     default:
