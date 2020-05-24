@@ -1,4 +1,4 @@
-# Project Title
+# Graph-Algorithms
 
 Graph-Algorithms is an interactive website to draw graphs and visualize the shortest-path solutions calculated by 6 algorithms.
 
