@@ -18,7 +18,7 @@ Updated: 29.02.2020
   margin: 2% 10%;
   padding: 1rem;
   background-color: var(--color-surface);
-  height: -moz-available;
+  height: 93%;
   height: -webkit-fill-available;
   height: fill-available;
   overflow: hidden;
