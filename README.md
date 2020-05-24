@@ -11,6 +11,10 @@ Graph-Algorithms is an interactive website to draw graphs and visualize the shor
 - Greedy (naive)
 - Greedy (smart)
 
+## Website
+
+https://jakhac.github.io/
+
 ## Built With
 
 - Vanilla JavaScript
@@ -19,4 +23,4 @@ Graph-Algorithms is an interactive website to draw graphs and visualize the shor
 ## Authors
 
 - **Kevin Katzkowski** - [GitHub](https://github.com/SantaClaus91)
-- **Jkoab Hackstein** - [GitHub](https://github.com/jakhac)
+- **Jakob Hackstein** - [GitHub](https://github.com/jakhac)
