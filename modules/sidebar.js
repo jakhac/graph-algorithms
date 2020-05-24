@@ -197,10 +197,22 @@ function updateTheme() {
 }
 
 /**
- * Returns the stored theme, or null, if none was stored.
+ * Returns the stored theme, user system preference theme, or null.
  */
 function getStoredTheme() {
-  return localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  let theme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+  // check for user system preference
+  if (theme == null) {
+    if (!window.matchMedia) {
+      theme = null;
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      theme = 'dark';
+    } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+      theme = 'light';
+    }
+  }
+  return theme;
 }
 
 /**
@@ -476,14 +488,14 @@ fileElem.addEventListener('input', function () {
         'wrong file format',
         'make sure to only import files with a .grph extension.',
         'import',
-        function () {  openFileBrowser(); },
+        function () { openFileBrowser(); },
         'cancel',
         undefined
       );
     }
   }
   console.log(file);
-  reader.readAsText(file); 
+  reader.readAsText(file);
 });
 
 /**
