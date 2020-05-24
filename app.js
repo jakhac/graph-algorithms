@@ -178,7 +178,6 @@ Canvas.canvas.addEventListener('click', evt => {
  */
 Canvas.canvas.addEventListener('mousedown', evt => {
   evt.preventDefault();
-  console.log('canvas mousedown');
 
   // mouse is on canvas
   mouseOnCanvas = true;
@@ -309,8 +308,6 @@ Canvas.canvas.addEventListener('mousemove', evt => {
  * Handles canvas mouseleave event. On mouseleave, set mouseOnCanvas to false.
  */
 Canvas.canvas.addEventListener('mouseleave', () => {
-  console.log('canvas mouseleave');
-  
   mouseOnCanvas = false;
 })
 
@@ -318,8 +315,6 @@ Canvas.canvas.addEventListener('mouseleave', () => {
  * Handles canvas mouseenter event. On mouseenter, set mouseOnCanvas to true.
  */
 Canvas.canvas.addEventListener('mouseenter', () => {
-  console.log('canvas mouseenter');
-
   mouseOnCanvas = true;
 });
 
@@ -415,10 +410,7 @@ window.addEventListener('mouseup', evt => {
 
     // end edge drawing overlay
     Canvas.update();
-
-    console.log(mouseOnCanvas);
     
-
     if (!mouseOnCanvas) endEdgeDrawing();
   }
 });

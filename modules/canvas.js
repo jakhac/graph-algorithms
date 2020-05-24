@@ -111,9 +111,7 @@ function update() {
 
   redrawGraph();
   Minimap.drawMiniMap();
-  console.log('redrawn');
-  console.trace();
-  
+  console.log('redrawn');  
 }
 
 /**

@@ -2,7 +2,7 @@
  * Context menu implementation for user interface interaction.
  * 
  * Author: Kevin Katzkowski
- * Updated: 26.02.2020
+ * Updated: 23.05.2020
  */
 
 import * as App from '/app.js';

@@ -2,7 +2,7 @@
  * Help system implementation
  * 
  * Author: Kevin Katzkowski
- * Updated: 17.03.2020
+ * Updated: 24.05.2020
  */
 
 import * as Tutorial from './tutorial.js';
@@ -16,6 +16,9 @@ const helpWindowContainer = document.getElementById('help-window-container'),
   helpTopicGIF = document.getElementById('help-topic-gif'),
   takeTutorialButton = document.getElementById('take-tutorial-from-help');
 
+// set initial help topic
+let topic = 'select-algo';
+
 // add help window close button event
 closeHelpButton.addEventListener('click', closeHelp);
 takeTutorialButton.addEventListener('click', function () {
@@ -25,14 +28,18 @@ takeTutorialButton.addEventListener('click', function () {
 
 // add event listeners to help buttons
 for (let button of helpButtons) {
-  button.addEventListener('click', loadHelp);
-};
+  button.addEventListener('click', (evt) => {
+    // highlight clicked button
+    for (let button of helpButtons) {
+      button.classList.remove('selected');
+    };
+    evt.target.classList.add('selected');
 
-// load initial help topic
-let topic = 'select-algo';
-helpTopicHeading.innerHTML = getHelpTopicHeading(topic);
-helpTopicText.innerHTML = getHelpTopicDescription(topic);
-helpTopicGIF.src = getGif(topic);
+    topic = evt.target.getAttribute('data-help-topic');
+
+    loadHelp();
+  }, false);
+};
 
 /**
  * Closes help window
@@ -62,21 +69,14 @@ function showHelp() {
     helpWindowContainer.style.transition = '0.2s';
     helpWindowContainer.style.backgroundColor = 'rgba(0,0,0,0.4)';
   }, 50);
+
+  loadHelp();
 }
 
 /**
  * Loads the help section for the selected topic.
- * 
- * @param {browser event} evt the click event 
  */
-function loadHelp(evt) {
-  for (let button of helpButtons) {
-    button.classList.remove('selected');
-  };
-  evt.target.classList.add('selected');
-
-  let topic = evt.target.getAttribute('data-help-topic');
-
+function loadHelp() {
   helpTopicHeading.innerHTML = getHelpTopicHeading(topic);
   helpTopicText.innerHTML = getHelpTopicDescription(topic);
   helpTopicGIF.src = getGif(topic);
