@@ -22,5 +22,5 @@ https://jakhac.github.io/
 
 ## Authors
 
-- **Kevin Katzkowski** - [GitHub](https://github.com/SantaClaus91)
+- **Kevin Katzkowski** - [GitHub](https://github.com/katzkowski)
 - **Jakob Hackstein** - [GitHub](https://github.com/jakhac)

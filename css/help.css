@@ -165,6 +165,13 @@ p#help-topic-description {
   max-width: 23%;
 }
 
+.gif-placeholder {
+  background-color: var(--color-help-background);
+  width: 93.5%;
+  height: 68%;
+  text-align: center;
+}
+
 
 /* @media screen and (max-width: 1860px) {
   .help-item, #welcome {

@@ -77,9 +77,29 @@ function showHelp() {
  * Loads the help section for the selected topic.
  */
 function loadHelp() {
+  // remove previous gif
+  helpTopicGIF.src = '';
+  helpTopicGIF.style.display = 'none';
+
+  // add placeholder background
+  helpTopicGIF.parentNode.classList.add('gif-placeholder');
+  helpTopicGIF.parentNode.style.lineHeight = helpTopicGIF.parentNode.getBoundingClientRect().height + 'px';
+
+  // create placeholder text
+  let p = document.createElement('p');
+  p.innerHTML = getHelpTopicHeading(topic);
+  helpTopicGIF.parentNode.appendChild(p);
+
+  // load help content text
   helpTopicHeading.innerHTML = getHelpTopicHeading(topic);
+  helpTopicGIF.title = getHelpTopicHeading(topic);
   helpTopicText.innerHTML = getHelpTopicDescription(topic);
+  
+  // load new gif and remove placeholder
   helpTopicGIF.src = getGif(topic);
+  helpTopicGIF.parentNode.removeChild(p);
+  helpTopicGIF.style.display = 'block';
+  helpTopicGIF.parentNode.classList.remove('gif-placeholder');
 }
 
 /**

@@ -77,6 +77,16 @@ Updated: 23.02.2020
   left: 50%;
 }
 
+.tooltip.pos-center::after {
+  display: none;
+}
+
+.tooltip.pos-center {
+  right: 50%;
+  transform: translate(50%);
+  top: 5%;
+}
+
 .tooltip p, .tooltip h3 {
   color: var(--color-onbackground);
   margin-top: 0.25rem;
@@ -109,6 +119,11 @@ Updated: 23.02.2020
   width: fill-available;
   margin: 0 1rem;
   padding: 0rem;
+}
+
+.help-gif #help-topic-gif {
+  border-radius: var(--border-radius);
+  width: 100%; /* for Edge */
 }
 
 .tooltip .help-container {

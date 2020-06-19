@@ -202,7 +202,7 @@ function updateTheme() {
 function getStoredTheme() {
   let theme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
 
-  // check for user system preference
+  // check for user system ence
   if (theme == null) {
     if (!window.matchMedia) {
       theme = null;

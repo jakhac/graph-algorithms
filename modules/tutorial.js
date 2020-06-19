@@ -51,7 +51,7 @@ function start() {
 
   // get starting graph file
   let file = null, xmlhttp = new XMLHttpRequest();
-  xmlhttp.open('GET', 'sources/tutorial.grph',true);
+  xmlhttp.open('GET', 'graphs/tutorial.grph',true);
 
   // when async ready
   xmlhttp.onreadystatechange = function () {
@@ -93,6 +93,17 @@ function end() {
  */
 function highlightSection(element, removePadding) {
   removeHighlight();
+
+  if(element == undefined) {
+    // set left background box to fullscreen
+    leftBox.style.top =  '0px';
+    leftBox.style.left = '0px';
+    leftBox.style.width = window.innerWidth + 'px';
+    leftBox.style.height = window.innerHeight + 'px';
+    leftBox.style.display = 'block';
+    
+    return;
+  }
 
   let top = element.getBoundingClientRect().top - 10,
     left = element.getBoundingClientRect().left - 10 < 0 ? 0 : element.getBoundingClientRect().left - 10,
@@ -213,6 +224,11 @@ function continueTutorial() {
       break;
 
     case 11:
+      highlightSection(undefined)
+      showTutorialTooltip(12, document.getElementById('tooltip-anchor'));
+      break;
+
+    case 12:
       end(); // end tutorial 
       break;
 
@@ -236,7 +252,7 @@ function showTutorialTooltip(step, refElement) {
     case 1:
       tooltip = Tooltip.show(
         refElement,
-        'draw a node (1/11)',
+        'draw a node (1/12)',
         'first, draw another node onto the canvas.'
       );
       Tooltip.showHelp(tooltip, 'draw-node', refElement);
@@ -246,7 +262,7 @@ function showTutorialTooltip(step, refElement) {
     case 2:
       tooltip = Tooltip.show(
         refElement,
-        'draw an edge (2/11)',
+        'draw an edge (2/12)',
         'connect the new node with the others by drawing an edge and assigning a cost to it. edges are directed, so make sure the new node is reachable!'
       );
       Tooltip.showHelp(tooltip, 'draw-edge', refElement);
@@ -257,7 +273,7 @@ function showTutorialTooltip(step, refElement) {
       if (graph.currentStartNode != undefined) {
         Tooltip.show(
           refElement,
-          'start node already defined (3/11)',
+          'start node already defined (3/12)',
           'looks like you already defined a start node. good job!',
           'next',
           function () { continueTutorial(); }
@@ -265,7 +281,7 @@ function showTutorialTooltip(step, refElement) {
       } else {
         tooltip = Tooltip.show(
           refElement,
-          'set a start node (3/11)',
+          'set a start node (3/12)',
           'the start node is the algorithms entry point.'
         );
         Tooltip.showHelp(tooltip, 'start-node', refElement);
@@ -277,7 +293,7 @@ function showTutorialTooltip(step, refElement) {
       if (graph.currentEndNode != undefined) {
         Tooltip.show(
           refElement,
-          'target node already defined(4/11)',
+          'target node already defined(4/12)',
           'looks like you already defined a target node. good job!',
           'next',
           function () { continueTutorial(); }
@@ -285,7 +301,7 @@ function showTutorialTooltip(step, refElement) {
       } else {
         tooltip = Tooltip.show(
           refElement,
-          'set a target node (4/11)',
+          'set a target node (4/12)',
           'the target node is node which the algorithms is trying to reach.'
         );
         Tooltip.showHelp(tooltip, 'target-node', refElement);
@@ -296,7 +312,7 @@ function showTutorialTooltip(step, refElement) {
     case 5:
       Tooltip.show(
         refElement,
-        'select algorithm (5/11)',
+        'select algorithm (5/12)',
         'select an algorithm to execute on your graph.'
       );
       tutorialStep = 5;
@@ -305,7 +321,7 @@ function showTutorialTooltip(step, refElement) {
     case 6:
       Tooltip.show(
         refElement,
-        'run algorithm (6/11)',
+        'run algorithm (6/12)',
         'now run the selected algorithm!'
       );
       tutorialStep = 6;
@@ -325,7 +341,7 @@ function showTutorialTooltip(step, refElement) {
     case 8:
       Tooltip.show(
         refElement,
-        'instant algorithm result (8/11)',
+        'instant algorithm result (8/12)',
         'if you don\'t want to wait for the algorithm to run completely, you can click on this button to display the result instantly.',
         'next',
         function () { continueTutorial(); }
@@ -336,7 +352,7 @@ function showTutorialTooltip(step, refElement) {
     case 9:
       Tooltip.show(
         refElement,
-        'execution speed, random graphs and canvas clearing (9/11)',
+        'execution speed, random graphs and canvas clearing (9/12)',
         'using the sliders, you can tweak the execution speed and the random graph size. click on the buttons to clear the canvas or to generate a random graph.',
         'next',
         function () { continueTutorial(); }
@@ -347,7 +363,7 @@ function showTutorialTooltip(step, refElement) {
     case 10:
       Tooltip.show(
         refElement,
-        'distanced edges mode and auto scrolling (10/11)',
+        'distanced edges mode and auto scrolling (10/12)',
         'in distanced edges mode, the cost of an edge is dependend on its physical length and automatically set and updated. <br>auto scrolling is used to show the execution path of graphs larger than the window.',
         'next',
         function () { continueTutorial(); }
@@ -359,12 +375,28 @@ function showTutorialTooltip(step, refElement) {
     case 11:
       Tooltip.show(
         refElement,
-        'import/export graph (11/11)',
+        'import/export graph (11/12)',
         'you can save your graphs and reuse them later by importing them again.',
-        'finish',
+        'next',
         function () { continueTutorial(); }
       );
       tutorialStep = 11;
+      break;
+    
+    case 12:
+      tooltip = Tooltip.show(
+        refElement,
+        'key bindings (12/12)',
+        'use <span class="key-press">ctrl + z</span> to undo and <span class="key-press">ctrl + y</span> to redo an action. you can drag the canvas with <span class="key-press">space + left mouse</span>. click on help to restart this tutorial and for more information.',
+        'finish',
+        function () { continueTutorial(); }
+      );
+
+      // place in center of screen
+      tooltip.classList.replace('pos-left', 'pos-center');
+      tooltip.style.removeProperty('top');
+      tooltip.style.removeProperty('right');
+      tutorialStep = 12;
       break;
 
     default:

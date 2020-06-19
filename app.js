@@ -245,20 +245,44 @@ Canvas.canvas.addEventListener('mousemove', evt => {
   // get dragging node
   graph.getNodeList().forEach(node => {
     if (node.dragging) {
-      // get canvas position
-      let position = Canvas.getCanvasPosition(evt);
-      let dx = position.x;
-      let dy = position.y;
+      let position, dx, dy, cx, cy, field1, field2, field3, field4, maxX, maxY;
 
-      // check all fields of where new node would be drawn
-      let field1 = Canvas.getNodeAtCoordinates(dx, dy);
-      let field2 = Canvas.getNodeAtCoordinates(dx + 1, dy);
-      let field3 = Canvas.getNodeAtCoordinates(dx, dy + 1);
-      let field4 = Canvas.getNodeAtCoordinates(dx + 1, dy + 1);
+      // get canvas position
+      position = Canvas.getCanvasPosition(evt);
+      dx = position.x;
+      dy = position.y;
+
+      // determine in which field the node has been grabbed by the user
+      cx = node.x - dx;
+      cy = node.y - dy;
+
+      // check all fields of where new node would be drawn, depending on which field the node has been grabbed by the user
+      if(cx < 0 && cy >= 0) {
+        field1 = Canvas.getNodeAtCoordinates(dx - 1, dy);
+        field2 = Canvas.getNodeAtCoordinates(dx, dy);
+        field3 = Canvas.getNodeAtCoordinates(dx - 1, dy + 1);
+        field4 = Canvas.getNodeAtCoordinates(dx, dy + 1);
+      } else if(cx >= 0 && cy < 0) {
+        field1 = Canvas.getNodeAtCoordinates(dx, dy - 1);
+        field2 = Canvas.getNodeAtCoordinates(dx + 1, dy - 1);
+        field3 = Canvas.getNodeAtCoordinates(dx, dy);
+        field4 = Canvas.getNodeAtCoordinates(dx + 1, dy);
+      } else if(cx < 0 && cy < 0) {
+        field1 = Canvas.getNodeAtCoordinates(dx - 1, dy - 1);
+        field2 = Canvas.getNodeAtCoordinates(dx, dy - 1);
+        field3 = Canvas.getNodeAtCoordinates(dx - 1, dy);
+        field4 = Canvas.getNodeAtCoordinates(dx, dy);
+      } else {
+        
+        field1 = Canvas.getNodeAtCoordinates(dx, dy);
+        field2 = Canvas.getNodeAtCoordinates(dx + 1, dy);
+        field3 = Canvas.getNodeAtCoordinates(dx, dy + 1);
+        field4 = Canvas.getNodeAtCoordinates(dx + 1, dy + 1);
+      }
 
       // check if new position is out of canvas bounds
-      let maxX = Canvas.gridData.length;
-      let maxY = Canvas.gridData[0].length;
+      maxX = Canvas.gridData.length;
+      maxY = Canvas.gridData[0].length;
       if ((dx + 1) < maxX && (dy + 1) < maxY) {
 
         // if fields are empty or filled with this node
