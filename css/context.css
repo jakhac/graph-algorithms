@@ -1,7 +1,7 @@
 /*
 Context menu styling for graph algorithm visualizer tool
 Author: Kevin Katzkowski
-Updated: 22.02.2020
+Updated: 19.06.2020
 */
 
 .context-menu {
@@ -13,7 +13,7 @@ Updated: 22.02.2020
   visibility: hidden;
   position: absolute;
   border-radius: var(--border-radius);
-  z-index: 5;
+  z-index: 6;
 }
 
 .context-menu li:first-child:hover {

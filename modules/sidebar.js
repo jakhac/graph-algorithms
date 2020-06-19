@@ -2,7 +2,7 @@
  * Context menu implementation for user interface interaction.
  * 
  * Author: Kevin Katzkowski
- * Updated: 23.05.2020
+ * Updated: 19.06.2020
  */
 
 import * as App from '/app.js';
@@ -202,7 +202,7 @@ function updateTheme() {
 function getStoredTheme() {
   let theme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
 
-  // check for user system ence
+  // check for user system preference
   if (theme == null) {
     if (!window.matchMedia) {
       theme = null;

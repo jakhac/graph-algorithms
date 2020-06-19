@@ -2,7 +2,7 @@
  * Help system implementation
  * 
  * Author: Kevin Katzkowski
- * Updated: 24.05.2020
+ * Updated: 19.06.2020
  */
 
 import * as Tutorial from './tutorial.js';

@@ -2,7 +2,7 @@
  * Tutorial implementation
  * 
  * Author: Kevin Katzkowski
- * Updated: 11.04.2020
+ * Updated: 19.06.2020
  */
 
 import * as Tooltip from './tooltip.js';
@@ -395,7 +395,7 @@ function showTutorialTooltip(step, refElement) {
       // place in center of screen
       tooltip.classList.replace('pos-left', 'pos-center');
       tooltip.style.removeProperty('top');
-      tooltip.style.removeProperty('right');
+      tooltip.style.removeProperty('left');
       tutorialStep = 12;
       break;
 

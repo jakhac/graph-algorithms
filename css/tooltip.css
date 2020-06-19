@@ -1,11 +1,11 @@
 /*
 General styling for tooltips
 Author: Kevin Katzkowski
-Updated: 23.02.2020
+Updated: 19.06.2020
 */
 
 .tooltip {
-  z-index: 5; /* TODO shall be smaller than side containers */
+  z-index: 5; 
   position: fixed;
   height: auto;
   width: 28rem;
@@ -42,7 +42,7 @@ Updated: 23.02.2020
   width: -moz-available;
   width: -webkit-fill-available;
   width: fill-available;
-  margin: 0rem 1rem; /* TODO 0rem 0.5rem 0rem 1rem; */
+  margin: 0rem 1rem;
   padding: 0rem;
   text-align: right;
 }
@@ -82,8 +82,8 @@ Updated: 23.02.2020
 }
 
 .tooltip.pos-center {
-  right: 50%;
-  transform: translate(50%);
+  left: 50%;
+  transform: translate(-50%, 0);
   top: 5%;
 }
 
