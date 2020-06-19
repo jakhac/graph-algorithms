@@ -1,0 +1,10 @@
+# Editors
+.vscode/
+.idea/
+.vs/
+
+# Mac/OSX
+.DS_Store
+
+# Windows
+Thumbs.db
