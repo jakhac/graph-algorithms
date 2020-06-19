@@ -97,9 +97,12 @@ function loadHelp() {
   
   // load new gif and remove placeholder
   helpTopicGIF.src = getGif(topic);
-  helpTopicGIF.parentNode.removeChild(p);
-  helpTopicGIF.style.display = 'block';
-  helpTopicGIF.parentNode.classList.remove('gif-placeholder');
+  helpTopicGIF.onload = function () {
+    helpTopicGIF.parentNode.removeChild(p);
+    helpTopicGIF.style.display = 'block';
+    helpTopicGIF.parentNode.classList.remove('gif-placeholder');
+  }
+  
 }
 
 /**
