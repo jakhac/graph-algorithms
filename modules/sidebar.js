@@ -227,7 +227,8 @@ startButton.addEventListener('click', evt => {
     Canvas.update();
   } else {
     let key = AlgoSelect.getSelectedAlgorithmKey();
-    if (key) {
+    console.log(key);
+    if (key && key != 'default') {
       // show error if start or target is undefined
       if (App.graph.currentStartNode == undefined && App.graph.currentEndNode == undefined) {
         // show feedback

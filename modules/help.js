@@ -155,37 +155,37 @@ function getHelpTopicHeading(data) {
 function getHelpTopicDescription(data) {
   switch (data) {
     case 'select-algo':
-      return 'press <span class="key-press">left mouse</span> to select an algorithm.';
+      return 'click <span class="key-press">left mouse</span> to select an algorithm.';
 
     case 'draw-node':
-      return 'press <span class="key-press">left mouse</span> to draw a node onto the canvas.';
+      return 'click <span class="key-press">left mouse</span> to draw a node onto the canvas.';
 
     case 'move-node':
       return 'hold <span class="key-press">left mouse</span> and move your mouse to drag a node to a new position.';
 
     case 'start-node':
-      return 'press <span class="key-press">right mouse</span> with your cursor above a node and then select <span class="key-press">set start</span> from the menu.';
+      return 'click <span class="key-press">right mouse</span> with your cursor above a node and then select <span class="key-press">set start</span> from the menu.';
 
     case 'target-node':
-      return 'press <span class="key-press">right mouse</span> with your cursor above a node and then select <span class="key-press">set target</span> from the menu.';
+      return 'click <span class="key-press">right mouse</span> with your cursor above a node and then select <span class="key-press">set target</span> from the menu.';
 
     case 'value-node':
-      return 'press <span class="key-press">right mouse</span> with your cursor above a node and then select <span class="key-press">change value</span> from the menu. enter the new value and then click on <span class="key-press">save</span>.';
+      return 'click <span class="key-press">right mouse</span> with your cursor above a node and then select <span class="key-press">change value</span> from the menu. enter the new value and then click on <span class="key-press">save</span>.';
 
     case 'color-node':
-      return 'press <span class="key-press">right mouse</span> with your cursor above a node and then select <span class="key-press">change color</span> from the menu. then select the new color.';
+      return 'click <span class="key-press">right mouse</span> with your cursor above a node and then select <span class="key-press">change color</span> from the menu. then select the new color.';
 
     case 'delete-node':
-      return 'press <span class="key-press">right mouse</span> with your cursor above a node and then select <span class="key-press">delete node</span> from the menu.';
+      return 'click <span class="key-press">right mouse</span> with your cursor above a node and then select <span class="key-press">delete node</span> from the menu.';
 
     case 'draw-edge':
-      return 'press <span class="key-press">left mouse</span> with your cursor above a node. a blue mask will show up. now move your mouse to another node and click on it. you can also click anywhere to create a node and automatically connect the edge to it.';
+      return 'click <span class="key-press">left mouse</span> with your cursor above a node. a blue mask will show up. now move your mouse to another node and click on it. you can also click anywhere to create a node and automatically connect the edge to it.';
 
     case 'value-edge':
-      return 'press <span class="key-press">right mouse</span> with your cursor above th edge and then select <span class="key-press">change value</span> from the menu. enter the new value and then click on <span class="key-press">save</span>.';
+      return 'click <span class="key-press">right mouse</span> with your cursor above th edge and then select <span class="key-press">change value</span> from the menu. enter the new value and then click on <span class="key-press">save</span>.';
 
     case 'delete-edge':
-      return 'press <span class="key-press">right mouse</span> with your cursor above the edge and then select <span class="key-press">delete edge</span> from the menu.';
+      return 'click <span class="key-press">right mouse</span> with your cursor above the edge and then select <span class="key-press">delete edge</span> from the menu.';
   }
 }
 
