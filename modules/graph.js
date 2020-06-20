@@ -323,8 +323,6 @@ class Graph {
    * @returns {ObjectLiteral} graph as object literal
    */
   convertToObjLit() {
-    //TODO move to converter.js
-
     // reset stored obj literal
     this.graph_algo = {};
 
@@ -469,8 +467,6 @@ class Graph {
    * @returns {string} graph as string
    */
   convertToString() {
-    //TODO move to converter.js
-
     let file = "";
 
     file += "Nodes ";
