@@ -1,26 +1,22 @@
-# Graph-Algorithms
+# graph algorithm visualizer
 
-Graph-Algorithms is an interactive website to draw graphs and visualize the shortest-path solutions calculated by 6 algorithms.
+this tool allows you to draw your own graph and then select an algorithm to execute on your graph. the pathing of the algorithm will be highlighted during execution. go visit our website: https://graph-algorithms.io
 
-## Featured Algorithms
+## featured algorithms
+six algorithms to choose from:
+  - dijkstra
+  - greedy (naive)
+  - greedy (smart)
+  - a* star
+  - depth first search
+  - breadth first search
+  
+## built with
 
-- Breadth First Search
-- Depth First Search
-- A\* Star
-- Dijkstra's Algorithm
-- Greedy (naive)
-- Greedy (smart)
+- html, css
+- vanilla javascript
 
-## Website
+## authors
 
-https://jakhac.github.io/
-
-## Built With
-
-- Vanilla JavaScript
-- HTML, CSS
-
-## Authors
-
-- **Kevin Katzkowski** - [GitHub](https://github.com/katzkowski)
-- **Jakob Hackstein** - [GitHub](https://github.com/jakhac)
+- **kevin katzkowski** - [github](https://github.com/katzkowski)
+- **jakob hackstein** - [github](https://github.com/jakhac)
