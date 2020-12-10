@@ -6,6 +6,7 @@
  */
 
 
+
 /**
  * Function returns the lowest connecting node.
  * 
